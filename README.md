@@ -2,6 +2,120 @@
 
 
 
+\## How to Run the Project
+
+
+
+\### Requirements
+
+
+
+\* Java JDK installed on the system
+
+\* Command Line / Terminal
+
+
+
+\### Setup
+
+
+
+1\. Download or clone the project from GitHub.
+
+2\. Open the project folder in the terminal.
+
+3\. Go to the `src` folder.
+
+
+
+```text
+
+cd src
+
+```
+
+
+
+\### Compile the Project
+
+
+
+Run the following command:
+
+
+
+```text
+
+javac \*.java
+
+```
+
+
+
+\### Run the Project
+
+
+
+After compiling, run:
+
+
+
+```text
+
+java Main
+
+```
+
+
+
+The main menu will appear in the terminal.
+
+
+
+\### Data Files
+
+
+
+The project stores data in the `data` folder.
+
+
+
+The following files are used:
+
+
+
+\* `vehicles.txt`
+
+\* `customers.txt`
+
+\* `rentals.txt`
+
+
+
+These files store vehicle, customer and rental records.
+
+
+
+\### Admin Login
+
+
+
+To open the Admin Menu:
+
+
+
+\* Username: `admin`
+
+\* Password: `admin123`
+
+
+
+The admin can view, add and remove vehicles and view customer and rental records.
+
+
+
+
+
 \## Project Overview
 
 
