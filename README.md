@@ -6,15 +6,15 @@
 
 
 
-The Vehicle Rental Management System is a command-line based Java application developed to manage vehicles, customers, and vehicle rentals.
+The Vehicle Rental Management System is a command-line Java program created to manage vehicles, customers and vehicle rentals.
 
 
 
-The system allows customers to be registered, vehicles to be viewed and searched, vehicles to be rented and returned, and rental records to be maintained.
+The Vehicle Rental Management System lets customers register, lets users view and search vehicles, lets users rent and return vehicles and keeps records.
 
 
 
-An administrator can also manage the vehicle inventory and view customer and rental information.
+An administrator can also manage vehicle inventory and view customer and rental information.
 
 
 
@@ -22,17 +22,17 @@ An administrator can also manage the vehicle inventory and view customer and ren
 
 
 
-\- Java
+\* Java
 
-\- Object-Oriented Programming
+\* Object-Oriented Programming
 
-\- Java Collections
+\* Java Collections
 
-\- File Handling
+\* File Handling
 
-\- Command Line Interface
+\* Command Line Interface
 
-\- Git and GitHub
+\* Git and GitHub
 
 
 
@@ -44,9 +44,9 @@ An administrator can also manage the vehicle inventory and view customer and ren
 
 
 
-1\. Register a new customer
+1\. Register a customer
 
-2\. View available vehicles
+2\. View vehicles
 
 3\. Search for a vehicle
 
@@ -66,9 +66,9 @@ An administrator can also manage the vehicle inventory and view customer and ren
 
 2\. View all vehicles
 
-3\. Add new vehicles
+3\. Add vehicles
 
-4\. Remove available vehicles
+4\. Remove vehicles
 
 5\. View all registered customers
 
@@ -84,9 +84,9 @@ The system supports:
 
 
 
-\- Cars
+\* Cars
 
-\- Bikes
+\* Bikes
 
 
 
@@ -94,19 +94,19 @@ Each vehicle contains information such as:
 
 
 
-\- Vehicle ID
+\* Vehicle ID
 
-\- Brand
+\* Brand
 
-\- Model
+\* Model
 
-\- Rental price per day
+\* Rental price per day
 
-\- Availability status
+\* Availability status
 
 
 
-Cars additionally store the number of seats, while bikes store engine capacity.
+Cars additionally store the number of seats while bikes store engine capacity.
 
 
 
@@ -114,7 +114,7 @@ Cars additionally store the number of seats, while bikes store engine capacity.
 
 
 
-The project demonstrates several Java OOP concepts:
+The project demonstrates Java OOP concepts:
 
 
 
@@ -122,7 +122,7 @@ The project demonstrates several Java OOP concepts:
 
 
 
-Vehicle, Customer, and Rental data is stored using private fields with appropriate methods for accessing and modifying the data.
+Vehicle, Customer and Rental data are stored in fields, with methods that allow access and changes.
 
 
 
@@ -130,7 +130,7 @@ Vehicle, Customer, and Rental data is stored using private fields with appropria
 
 
 
-`Car` and `Bike` inherit common properties and behaviour from the `Vehicle` class.
+`Car` and `Bike` inherit properties and behaviour from the `Vehicle` class.
 
 
 
@@ -138,7 +138,7 @@ Vehicle, Customer, and Rental data is stored using private fields with appropria
 
 
 
-Vehicle objects can be handled through the common `Vehicle` reference while their specific implementations are maintained in the subclasses.
+Vehicle objects can be handled through the `Vehicle` reference while their specific implementations are maintained in the subclasses.
 
 
 
@@ -158,35 +158,71 @@ Common vehicle behaviour is represented through the base `Vehicle` class.
 
 VehicleRentalSystem/
 
+
+
 │
+
+
 
 ├── src/
 
+
+
 │   ├── Main.java
+
+
 
 │   ├── Vehicle.java
 
+
+
 │   ├── Car.java
+
+
 
 │   ├── Bike.java
 
+
+
 │   ├── Customer.java
+
+
 
 │   ├── Rental.java
 
+
+
 │   └── VehicleRentalSystem.java
 
+
+
 │
+
+
 
 ├── data/
 
+
+
 │   ├── vehicles.txt
+
+
 
 │   ├── customers.txt
 
+
+
 │   └── rentals.txt
+
+
 
 │
 
-└── README.mds
+
+
+└── README.md
+
+
+
+
 
