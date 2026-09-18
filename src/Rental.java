@@ -1,7 +1,8 @@
+
 public class Rental {
 
     private String rentalId;
-    private Customer customer;
+    Customer customer;
     private Vehicle vehicle;
     private int numberOfDays;
     private double totalCost;
@@ -20,7 +21,7 @@ public class Rental {
         vehicle.setAvailable(false);
     }
 
-    public String getRentalId() {
+    String getRentalId() {
         return rentalId;
     }
 
@@ -45,6 +46,7 @@ public class Rental {
     }
 
     public void returnVehicle() {
+
         if (!returned) {
             returned = true;
             vehicle.setAvailable(true);
@@ -52,6 +54,7 @@ public class Rental {
     }
 
     public void displayRentalDetails() {
+
         System.out.println("----------------------------------------");
         System.out.println("Rental ID    : " + rentalId);
         System.out.println("Customer     : " + customer.getName());
@@ -62,3 +65,4 @@ public class Rental {
         System.out.println("----------------------------------------");
     }
 }
+

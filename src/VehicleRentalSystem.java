@@ -1,9 +1,10 @@
+
 import java.io.*;
 import java.util.ArrayList;
 
 public class VehicleRentalSystem {
 
-    private ArrayList<Vehicle> vehicles;
+    ArrayList<Vehicle> vehicles;
     private ArrayList<Customer> customers;
     private ArrayList<Rental> rentals;
 
@@ -29,7 +30,7 @@ public class VehicleRentalSystem {
 
     // ==================== DATA FOLDER ====================
 
-    private void createDataFolder() {
+    void createDataFolder() {
 
         File folder = new File(DATA_FOLDER);
 
@@ -40,7 +41,7 @@ public class VehicleRentalSystem {
 
     // ==================== SAMPLE VEHICLES ====================
 
-    private void loadSampleVehicles() {
+    void loadSampleVehicles() {
 
         vehicles.add(
             new Car("C001", "Toyota", "Camry", 2500, 5)
@@ -86,19 +87,21 @@ public class VehicleRentalSystem {
         }
 
         if (!found) {
+
             System.out.println(
                 "No vehicles are currently available."
             );
         }
     }
 
-    public void displayAllVehicles() {
+    void displayAllVehicles() {
 
         System.out.println(
             "\n========== ALL VEHICLES =========="
         );
 
         if (vehicles.isEmpty()) {
+
             System.out.println("No vehicles found.");
             return;
         }
@@ -113,7 +116,7 @@ public class VehicleRentalSystem {
         for (Vehicle vehicle : vehicles) {
 
             if (vehicle.getVehicleId()
-                    .equalsIgnoreCase(vehicleId)) {
+                .equalsIgnoreCase(vehicleId)) {
 
                 return vehicle;
             }
@@ -137,7 +140,7 @@ public class VehicleRentalSystem {
         saveVehicles();
 
         System.out.println(
-            "Vehicle added successfully."
+            "Vehicle added "
         );
 
         return true;
@@ -183,12 +186,12 @@ public class VehicleRentalSystem {
         saveCustomers();
     }
 
-    public Customer findCustomer(String customerId) {
+    Customer findCustomer(String customerId) {
 
         for (Customer customer : customers) {
 
             if (customer.getCustomerId()
-                    .equalsIgnoreCase(customerId)) {
+                .equalsIgnoreCase(customerId)) {
 
                 return customer;
             }
@@ -219,17 +222,14 @@ public class VehicleRentalSystem {
 
     // ==================== RENTALS ====================
 
-    public boolean createRental(
-            String rentalId,
-            String customerId,
-            String vehicleId,
-            int days) {
+    boolean createRental(
+        String rentalId,
+        String customerId,
+        String vehicleId,
+        int days) {
 
-        Customer customer =
-            findCustomer(customerId);
-
-        Vehicle vehicle =
-            findVehicle(vehicleId);
+        Customer customer = findCustomer(customerId);
+        Vehicle vehicle = findVehicle(vehicleId);
 
         if (customer == null) {
 
@@ -275,7 +275,6 @@ public class VehicleRentalSystem {
         );
 
         rentals.add(rental);
-
         saveRentals();
         saveVehicles();
 
@@ -288,7 +287,7 @@ public class VehicleRentalSystem {
         return true;
     }
 
-    public void displayAllRentals() {
+    void displayAllRentals() {
 
         System.out.println(
             "\n========== RENTAL RECORDS =========="
@@ -313,7 +312,7 @@ public class VehicleRentalSystem {
         for (Rental rental : rentals) {
 
             if (rental.getRentalId()
-                    .equalsIgnoreCase(rentalId)) {
+                .equalsIgnoreCase(rentalId)) {
 
                 if (rental.isReturned()) {
 
@@ -325,7 +324,6 @@ public class VehicleRentalSystem {
                 }
 
                 rental.returnVehicle();
-
                 saveRentals();
                 saveVehicles();
 
@@ -350,9 +348,9 @@ public class VehicleRentalSystem {
 
         try (
             PrintWriter writer =
-                new PrintWriter(
-                    new FileWriter(VEHICLE_FILE)
-                )
+            new PrintWriter(
+                new FileWriter(VEHICLE_FILE)
+            )
         ) {
 
             for (Vehicle vehicle : vehicles) {
@@ -397,13 +395,13 @@ public class VehicleRentalSystem {
 
     // ==================== SAVE CUSTOMERS ====================
 
-    private void saveCustomers() {
+    void saveCustomers() {
 
         try (
             PrintWriter writer =
-                new PrintWriter(
-                    new FileWriter(CUSTOMER_FILE)
-                )
+            new PrintWriter(
+                new FileWriter(CUSTOMER_FILE)
+            )
         ) {
 
             for (Customer customer : customers) {
@@ -430,9 +428,9 @@ public class VehicleRentalSystem {
 
         try (
             PrintWriter writer =
-                new PrintWriter(
-                    new FileWriter(RENTAL_FILE)
-                )
+            new PrintWriter(
+                new FileWriter(RENTAL_FILE)
+            )
         ) {
 
             for (Rental rental : rentals) {
@@ -456,7 +454,7 @@ public class VehicleRentalSystem {
 
     // ==================== LOAD DATA ====================
 
-    private void loadData() {
+    void loadData() {
 
         loadVehicles();
         loadCustomers();
@@ -473,9 +471,9 @@ public class VehicleRentalSystem {
 
         try (
             BufferedReader reader =
-                new BufferedReader(
-                    new FileReader(file)
-                )
+            new BufferedReader(
+                new FileReader(file)
+            )
         ) {
 
             String line;
@@ -493,6 +491,7 @@ public class VehicleRentalSystem {
                 String brand = data[2];
                 String model = data[3];
                 double price = Double.parseDouble(data[4]);
+
                 boolean available =
                     Boolean.parseBoolean(data[6]);
 
@@ -510,7 +509,6 @@ public class VehicleRentalSystem {
                     );
 
                     car.setAvailable(available);
-
                     vehicles.add(car);
 
                 } else if (type.equals("BIKE")) {
@@ -527,7 +525,6 @@ public class VehicleRentalSystem {
                     );
 
                     bike.setAvailable(available);
-
                     vehicles.add(bike);
                 }
             }
@@ -550,9 +547,9 @@ public class VehicleRentalSystem {
 
         try (
             BufferedReader reader =
-                new BufferedReader(
-                    new FileReader(file)
-                )
+            new BufferedReader(
+                new FileReader(file)
+            )
         ) {
 
             String line;
@@ -593,9 +590,9 @@ public class VehicleRentalSystem {
 
         try (
             BufferedReader reader =
-                new BufferedReader(
-                    new FileReader(file)
-                )
+            new BufferedReader(
+                new FileReader(file)
+            )
         ) {
 
             String line;
@@ -649,3 +646,4 @@ public class VehicleRentalSystem {
         }
     }
 }
+

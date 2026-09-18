@@ -1,8 +1,10 @@
+
 import java.util.Scanner;
 
-public class Main {
+class Main {
 
     private static Scanner scanner = new Scanner(System.in);
+
     private static VehicleRentalSystem system = new VehicleRentalSystem();
 
     public static void main(String[] args) {
@@ -40,6 +42,7 @@ public class Main {
                     break;
 
                 case 7:
+
                     System.out.println(
                         "\nThank you for using Vehicle Rental System!"
                     );
@@ -52,6 +55,7 @@ public class Main {
                     break;
 
                 default:
+
                     System.out.println(
                         "\nInvalid choice. Please try again."
                     );
@@ -59,9 +63,9 @@ public class Main {
         }
     }
 
-    // ==================== MAIN MENU ====================
+    // ==================== MENU ====================
 
-    private static void displayMenu() {
+    static void displayMenu() {
 
         System.out.println("\n==========================================");
         System.out.println("       VEHICLE RENTAL MANAGEMENT");
@@ -79,7 +83,7 @@ public class Main {
 
     // ==================== CUSTOMER ====================
 
-    private static void registerCustomer() {
+    static void registerCustomer() {
 
         System.out.println(
             "\n========== CUSTOMER REGISTRATION =========="
@@ -116,7 +120,7 @@ public class Main {
 
     // ==================== RENTAL ====================
 
-    private static void rentVehicle() {
+    static void rentVehicle() {
 
         System.out.println(
             "\n========== RENT VEHICLE =========="
@@ -142,7 +146,7 @@ public class Main {
         );
     }
 
-    private static void returnVehicle() {
+    static void returnVehicle() {
 
         System.out.println(
             "\n========== RETURN VEHICLE =========="
@@ -156,7 +160,7 @@ public class Main {
 
     // ==================== SEARCH ====================
 
-    private static void searchVehicle() {
+    static void searchVehicle() {
 
         System.out.println(
             "\n========== SEARCH VEHICLE =========="
@@ -174,15 +178,15 @@ public class Main {
                 "Vehicle not found."
             );
 
-        } else {
-
-            vehicle.displayDetails();
+            return;
         }
+
+        vehicle.displayDetails();
     }
 
     // ==================== ADMIN ====================
 
-    private static void adminMenu() {
+    static void adminMenu() {
 
         System.out.println(
             "\n========== ADMIN LOGIN =========="
@@ -195,7 +199,7 @@ public class Main {
             readString("Enter admin password: ");
 
         if (!username.equals("admin")
-                || !password.equals("admin123")) {
+            || !password.equals("admin123")) {
 
             System.out.println(
                 "Invalid admin credentials."
@@ -220,6 +224,7 @@ public class Main {
             System.out.println("4. View All Customers");
             System.out.println("5. View Rental Records");
             System.out.println("6. Back to Main Menu");
+
             System.out.println(
                 "==============================="
             );
@@ -253,6 +258,7 @@ public class Main {
                     return;
 
                 default:
+
                     System.out.println(
                         "Invalid choice."
                     );
@@ -262,7 +268,7 @@ public class Main {
 
     // ==================== ADD VEHICLE ====================
 
-    private static void addVehicle() {
+    static void addVehicle() {
 
         System.out.println(
             "\n========== ADD VEHICLE =========="
@@ -284,7 +290,7 @@ public class Main {
 
         double price =
             readDouble(
-                "Enter rental price per day: "
+                "Enter price per day: "
             );
 
         Vehicle vehicle;
@@ -331,7 +337,7 @@ public class Main {
 
     // ==================== REMOVE VEHICLE ====================
 
-    private static void removeVehicle() {
+    static void removeVehicle() {
 
         System.out.println(
             "\n========== REMOVE VEHICLE =========="
@@ -345,7 +351,7 @@ public class Main {
 
     // ==================== INPUT METHODS ====================
 
-    private static int readInt(String message) {
+    static int readInt(String message) {
 
         while (true) {
 
@@ -369,7 +375,7 @@ public class Main {
         }
     }
 
-    private static double readDouble(String message) {
+    static double readDouble(String message) {
 
         while (true) {
 
@@ -396,7 +402,7 @@ public class Main {
             } catch (NumberFormatException e) {
 
                 System.out.println(
-                    "Please enter a valid number."
+                    "Please enter a number."
                 );
             }
         }

@@ -1,6 +1,7 @@
+
 public class Customer {
 
-    private String customerId;
+    String customerId;
     private String name;
     private String phone;
     private String email;
@@ -37,3 +38,5 @@ public class Customer {
         );
     }
 }
+
+

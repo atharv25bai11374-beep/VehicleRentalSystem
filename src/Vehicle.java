@@ -7,6 +7,7 @@ public class Vehicle {
     private boolean available;
 
     public Vehicle(String vehicleId, String brand, String model, double pricePerDay) {
+
         this.vehicleId = vehicleId;
         this.brand = brand;
         this.model = model;
